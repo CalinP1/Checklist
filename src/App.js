@@ -1,25 +1,65 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Header />
+      <div className="container">
+        <div className="display-container">
+          <DisplayList />
+        </div>
+        <div className="create-container">
+          <CreateList />
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+function Header() {
+  return (
+    <div className="header-container">
+      <header className="navbar">
+        <span>✔ CHECKLIST</span>
+      </header>
+    </div>
+  );
+}
+function DisplayList() {
+  return (
+    <ul>
+      <CardElement />
+    </ul>
+  );
+}
+function CardElement() {
+  return (
+    <li className="card-element">
+      <h3>Categoria</h3>
+      <p>Ai adaugat acest numar de elemente</p>
+      <span>Ai adaugat aceste elemente sfsafsafsafsafsafaf</span>
+      <Button>✖</Button>
+    </li>
+  );
+}
+function CreateList() {
+  return (
+    <form className="create-list">
+      <label> Adauga un obiect</label>
+      <input />
+
+      <label> Adauga o categorie</label>
+      <input />
+
+      <label>Sort the list..</label>
+      <select>
+        <option>Alphabeticali</option>
+        <option>A</option>
+        <option>A</option>
+      </select>
+      <Button>➕ Add</Button>
+    </form>
+  );
+}
+
+function Button({ children }) {
+  return <button className="button">{children}</button>;
+}
