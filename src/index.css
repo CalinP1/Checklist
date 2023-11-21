@@ -9,6 +9,10 @@
   box-sizing: border-box;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 .app {
   position: absolute;
   height: 100vh;
@@ -45,30 +49,28 @@
 
 .display-container {
   overflow: scroll;
-  height: 82vh;
+  height: 80vh;
   margin: 40px 0 20px 0;
 }
 
 .display-container ul {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
   list-style: none;
-}
-
-.display-container::-webkit-scrollbar {
-  display: none;
 }
 
 .card-element {
   background-color: #e0dddd;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 20px;
+  padding: 10px;
   margin: 12px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .create-list {
@@ -122,39 +124,49 @@
 }
 
 .sort-tems {
+  font-family: "Nanum Gothic", sans-serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
   color: #ddd;
+  font-weight: bolder;
 }
 
 .sort-tems select {
+  font-family: inherit;
   padding: 10px;
   border-radius: 10px;
   margin: 15px;
+  font-weight: bold;
+}
+
+.sort-tems option {
+  font-family: inherit;
+  font-weight: bolder;
 }
 
 .category-card {
   font-family: "Outfit", sans-serif;
   display: flex;
+  overflow: scroll;
   justify-content: center;
   align-content: center;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   background-color: rgb(67, 94, 77);
-  border-radius: 20px;
+  border-radius: 10px;
   color: #ddd;
-  padding: 7px;
+  padding: 10px;
   font-size: 12px;
 }
 
 .text-quantity-element {
   color: #1f1f1f;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: bold;
-  letter-spacing: 0.5px;
+  overflow: scroll;
 }
 .container-button-element {
   display: flex;
@@ -165,10 +177,28 @@
 
 .button-element {
   border-radius: 5px;
-  padding: 8px;
+  padding: 5px;
   background-color: #1f1f1f;
   color: rgb(219, 223, 221);
   border: #1f1f1f;
+}
+.container-main-element {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  padding: 5px;
+}
+
+.container-main-element span {
+  font-size: 20px;
+  font-weight: bolder;
+}
+.checkbox-element {
+  accent-color: rgb(67, 94, 77);
+  width: 17px;
+  height: 17px;
 }
 
 input {
@@ -185,4 +215,14 @@ input::placeholder {
 select {
   margin: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+select,
+button:hover {
+  background-color: rgb(202, 195, 171);
 }

@@ -9,12 +9,15 @@ export default function CardElement({ item, onHandleDelete, onHandleChecked }) {
           onChange={() => onHandleChecked(item.key)}
           className="checkbox-element"
         />
-        <span
+        <span style={item.checked ? { textDecoration: "line-through" } : {}}>
+          {item.quantity}
+        </span>
+        <p
           className="text-quantity-element"
           style={item.checked ? { textDecoration: "line-through" } : {}}
         >
-          {item.quantity} {item.description}
-        </span>
+          {item.description}
+        </p>
       </div>
 
       <div className="container-button-element">
