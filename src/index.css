@@ -128,8 +128,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  text-align: center;
   align-items: center;
   margin-bottom: 20px;
+  padding-left: 10px;
+  font-size: 15px;
   color: #ddd;
   font-weight: bolder;
 }
